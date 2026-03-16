@@ -10,6 +10,9 @@ sales_data = pd.DataFrame({
     'category': np.random.choice(['Electronics', 'Clothing', 'Books'], len(dates))
 })
 
+# 表データをアプリ上に表示
+st.dataframe(sales_data)
+
 # 月別集計
 monthly_sales = sales_data.groupby(sales_data['date'].dt.to_period('M'))['sales'].sum().reset_index()
 monthly_sales['date'] = monthly_sales['date'].dt.to_timestamp()
