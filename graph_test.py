@@ -14,7 +14,7 @@ sales_data = pd.DataFrame({
 # monthly_sales = sales_data.groupby(sales_data['date'].dt.to_period('M'))['sales'].sum().reset_index()
 # monthly_sales['date'] = monthly_sales['date'].dt.to_timestamp()
 category_sales = sales_data.groupby(sales_data['date'].dt.to_period('M'))['sales'].sum().reset_index()
-cstegory_sales['date'] = monthly_sales['date'].dt.to_timestamp()
+cstegory_sales['date'] = cstegory_sales['date'].dt.to_timestamp()
 
 import streamlit as st
 
