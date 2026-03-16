@@ -11,10 +11,8 @@ sales_data = pd.DataFrame({
 })
 
 # 月別集計
-# monthly_sales = sales_data.groupby(sales_data['date'].dt.to_period('M'))['sales'].sum().reset_index()
-# monthly_sales['date'] = monthly_sales['date'].dt.to_timestamp()
-category_sales = sales_data.groupby(sales_data['category'].dt.to_period('M'))['sales'].sum().reset_index()
-category_sales['category'] = category_sales['category'].dt.to_timestamp()
+monthly_sales = sales_data.groupby(sales_data['date'].dt.to_period('M'))['sales'].sum().reset_index()
+monthly_sales['date'] = monthly_sales['date'].dt.to_timestamp()
 
 import streamlit as st
 
@@ -25,8 +23,7 @@ st.dataframe(sales_data)
 
 # H1見出し
 st.markdown("# グラフアプリ")
-# st.line_chart(data=sales_data) 
 
-st.line_chart(category_sales.set_index('category')['sales'])
+st.line_chart(monthly_sales.set_index('date')['sales'])
 # st.bar_chart(monthly_sales.set_index('date')['sales'])
 # st.scatter_chart(monthly_sales.set_index('date')['sales'])
