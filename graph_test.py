@@ -13,8 +13,8 @@ sales_data = pd.DataFrame({
 # 月別集計
 # monthly_sales = sales_data.groupby(sales_data['date'].dt.to_period('M'))['sales'].sum().reset_index()
 # monthly_sales['date'] = monthly_sales['date'].dt.to_timestamp()
-category_sales = sales_data.groupby(sales_data['date'].dt.to_period('M'))['sales'].sum().reset_index()
-category_sales['date'] = category_sales['date'].dt.to_timestamp()
+category_sales = sales_data.groupby(sales_data['category'].dt.to_period('M'))['sales'].sum().reset_index()
+category_sales['date'] = category_sales['category'].dt.to_timestamp()
 
 import streamlit as st
 
