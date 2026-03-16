@@ -17,4 +17,5 @@ monthly_sales['date'] = monthly_sales['date'].dt.to_timestamp()
 import streamlit as st
 
 # これだけで折れ線グラフが完成
-st.line_chart(monthly_sales.set_index('date')['sales'])
+# st.line_chart(monthly_sales.set_index('date')['sales'])
+st.bar_chart(monthly_sales.set_index('date')['sales'])
