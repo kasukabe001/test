@@ -23,7 +23,7 @@ st.dataframe(sales_data)
 
 # H1見出し
 st.markdown("# グラフアプリ")
-st.line_chart(data=sales_data, x="サンプル1", y="サンプル2", width=0, height=0, use_container_width=True) 
+st.line_chart(data=sales_data) 
 
 #st.line_chart(monthly_sales.set_index('date')['sales'])
 # st.bar_chart(monthly_sales.set_index('date')['sales'])
