@@ -21,7 +21,7 @@ fig.update_layout(
 
 # 4. HTMLファイルとして保存
 # これをサーバーにアップロードすればWebで公開できます
-fig.write_html('my_graph.html')
+# fig.write_html('my_graph.html')
 
 # 5. 確認のために自動でブラウザを開く（任意）
 fig.show()
