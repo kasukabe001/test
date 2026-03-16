@@ -24,6 +24,6 @@ st.dataframe(sales_data)
 # H1見出し
 st.markdown("# グラフアプリ")
 
-st.line_chart(monthly_sales.set_index('date')['sales'], color=#ff0000)
+st.line_chart(monthly_sales.set_index('date')['sales'], color="#ff0000")
 # st.bar_chart(monthly_sales.set_index('date')['sales'])
 # st.scatter_chart(monthly_sales.set_index('date')['sales'])
