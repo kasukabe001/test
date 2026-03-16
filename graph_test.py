@@ -21,6 +21,6 @@ import streamlit as st
 # H1見出し
 st.markdown("# グラフアプリ")
 
-st.line_chart(monthly_sales.set_index('date')['sales'],x="横軸",y="縦軸")
+st.line_chart(monthly_sales.set_index('date')['sales'],x="横軸",y="縦軸", width=0, height=0, use_container_width=True)
 # st.bar_chart(monthly_sales.set_index('date')['sales'])
 # st.scatter_chart(monthly_sales.set_index('date')['sales'])
