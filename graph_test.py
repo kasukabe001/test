@@ -1,18 +1,12 @@
-import streamlit as st
-import pandas as pd
-from sklearn import datasets
+import numpy as np
+import matplotlib.pyplot as plt
 
-@st.cache
-def load_data():
-    iris = datasets.load_iris()
-    df = pd.DataFrame(iris.data, columns=iris.feature_names)
-    df['target'] = iris.target_names[iris.target]
-    return df
+# プロットするデータを定義
+x = np.arange(10)
+y = x ** 2
 
-df = load_data()
-targets = list(df.target.unique())
-selected_targets = st.multiselect('select targets', targets, default=targets)
-df = df[df.target.isin(selected_targets)]
-
-st.dataframe(df)
-
+# プロット
+plt.plot(x, y)
+plt.xlabel('x')  # x軸のラベル
+plt.ylabel('y')  # y軸のラベル
+plt.show()
