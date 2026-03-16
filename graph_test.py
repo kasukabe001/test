@@ -1,12 +1,15 @@
+import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
+from datetime import datetime, timedelta
 
-# プロットするデータを定義
-x = np.arange(10)
-y = x ** 2
+# サンプルデータ生成
+dates = pd.date_range(start='2023-01-01', end='2023-12-31', freq='D')
+sales_data = pd.DataFrame({
+    'date': dates,
+    'sales': np.random.normal(100000, 20000, len(dates)).astype(int),
+    'category': np.random.choice(['Electronics', 'Clothing', 'Books'], len(dates))
+})
 
-# プロット
-plt.plot(x, y)
-plt.xlabel('x')  # x軸のラベル
-plt.ylabel('y')  # y軸のラベル
-plt.show()
+# 月別集計
+monthly_sales = sales_data.groupby(sales_data['date'].dt.to_period('M'))['sales'].sum().reset_index()
+monthly_sales['date'] = monthly_sales['date'].dt.to_timestamp()
